@@ -1,0 +1,301 @@
+.hamburgerButton {
+    width: 35px;
+    height: 45px;
+    display: flex;
+    position: fixed;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    right: 12px;
+    top: 12px;
+    z-index: 20;
+  }
+  
+  .hamburgerButton span {
+    display: block;
+    position: fixed;
+    height: 9px;    
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+
+
+.hamburgerButton span:nth-child(1) {
+    top: 0px;
+  }
+  
+  .hamburgerButton span:nth-child(2),.hamburgerButton span:nth-child(3) {
+    top: 18px;
+  }
+  
+  .hamburgerButton span:nth-child(4) {
+    top: 36px;
+  }
+  
+  .hamburgerButton.clicked span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  .hamburgerButton.clicked span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .hamburgerButton.clicked span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  .hamburgerButton.clicked span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .usersMenu{
+    width: 175px;
+    height: min-content;
+    position:fixed;
+    top:0px;
+    right: 1rem;
+    background-color: red;
+    z-index: 10;
+    border-radius:1rem;
+    background-color:rgba(255, 255, 255, 0.0);
+
+  }
+
+
+@keyframes menuacilis {
+    from{
+      display: none;
+        opacity: 0;
+        transform:translateY(0);
+    }
+    to{
+      display: none;
+        transform:translateY(65px);
+        opacity: 1.0;
+    }
+}
+
+@keyframes menukapanis {
+    from{
+        opacity: 1;
+        transform:translateY(65px);
+    }
+    to{
+        transform:translateY(0);
+        opacity: 0;
+    }
+}
+
+.usersMenu.visible{
+    transform:translateY(65px);
+    animation-name: menuacilis;
+    animation-duration: 0.5s;
+}
+
+.usersMenu.hidden{
+    opacity: 0;
+    transform:translateY(0);
+    animation-duration: 0.5s;
+}
+
+.none {
+  display: none;
+}
+
+.menukapanis{
+    animation-name:menukapanis;
+}
+
+.userName{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin: 13px 0px;
+    backdrop-filter: blur(15rem); 
+    border-radius: 15px; 
+    box-shadow:0px 5px 10px 5px rgba(0,0,0,.1), 0 6px 6px -4px rgba(0,0,0,.1);
+    transition:all 0.3s ease;
+    top: 0px;
+}
+
+.removeUser{
+  padding: 5px;
+  height: 18px !important;
+}
+.removeUser:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 7px;
+}
+.userNameChild {
+    height: 100%;
+    color:rgb(75,75,75);
+    font-weight: 700;
+    padding: 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.currentUser{
+    background-color: rgba(74, 74, 74, 0.519);
+}
+.userName{
+    color:rgb(75,75,75);
+}
+.currentUser div {
+    color: white !important;
+}
+
+#overlay{
+  display: none;
+}
+
+.userName:hover{
+  cursor: pointer;
+}
+
+.currentUser:hover{
+  background-color: rgba(124, 124, 124, 0.519);
+}
+
+#addUserInput{
+  width: 100%;
+  height: 75%;
+  background-color: rgba(0,0,0,0);
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+
+#addUserInput::placeholder{
+  color: rgb(75, 75, 75);
+  font-weight: 600;
+}
+
+#addUserLabel{
+  border-radius:50px;
+  cursor:text;
+  width:100%;
+  box-shadow:0px 0px 5px 0.4px rgba(0, 0, 0, 0.29);
+}
+#addUserLabel:focus-within{
+  box-shadow:0px 0px 10px 2px rgba(0, 0, 0, 0.29);  
+}
+
+#addUserForm{
+  display: flex;
+  align-items: center;
+  padding: 0 3px 0 0.8rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 33.600px;
+  background-color:rgb(255, 255, 255);
+  box-shadow:0px 5px 20px 5px rgba(0,0,0,.1), 0 6px 6px -4px rgba(0,0,0,.1);
+  border-radius: 50px;
+  backdrop-filter: blur(3rem);
+}
+
+#addUserButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  background-color: #fff;
+  box-shadow:0px 0px 5px 0.4px rgba(0, 0, 0, 0.29);
+}
+#addUserButton svg {
+  transform: scale(0.5);
+  fill: rgb(75, 75, 75);
+}
+#addUserButton:hover{
+  cursor: pointer;
+}
+#addUserButton:hover > svg{
+  fill: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:990px) {
+  .userName:hover{
+    background-color: rgb(255, 255, 255, 0.3);
+  }
+}
+
+
+@media (max-width:990px){
+  
+  .usersMenu{
+    padding:16px 16px;
+    background-color:rgba(255, 255, 255, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(0) !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  #overlay{
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 8;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .userName:hover{
+    position: relative;
+    cursor: pointer;
+    top: -3px;
+    box-shadow:0px 5px 20px 5px rgba(0,0,0,.1), 0 6px 6px -4px rgba(0,0,0,.1);
+  }
+
+}
+
+
+
